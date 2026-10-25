@@ -127,7 +127,20 @@ a { color: inherit; }
   position: absolute; inset: 0; z-index: 1; overflow: hidden; border-radius: 999px 999px 26px 26px;
   background: linear-gradient(170deg, var(--tint-rose), var(--tint-violet));
 }
-.portrait svg { display: block; width: 100%; height: 100%; }
+.portrait-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+.svg-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.flower-petal { fill: var(--petal-rose); }
+.flower-core { fill: var(--accent-rose); }
+.flower-core-in { fill: var(--tint-rose); }
+.leaf-shape { fill: var(--leaf); }
+.leaf-vein { fill: none; stroke: var(--bg); stroke-width: 1.5; opacity: .6; }
+.flower-decoration { position: absolute; z-index: 2; width: clamp(2.5rem, 6vw, 4rem); height: auto; pointer-events: none; filter: drop-shadow(0 3px 5px var(--glow-rose)); }
+.flower-decoration-one { top: 8%; right: -1rem; transform: rotate(14deg); }
+.flower-decoration-two { bottom: 17%; left: -1.2rem; width: clamp(2.2rem, 5vw, 3.3rem); transform: rotate(-18deg); }
+.flower-decoration-three { right: 7%; bottom: 3%; width: clamp(1.8rem, 4vw, 2.6rem); transform: rotate(25deg); }
+.flower-decoration-two .flower-petal, .flower-inline .flower-petal { fill: var(--petal-violet); }
+.flower-decoration-two .flower-core, .flower-inline .flower-core { fill: var(--accent-violet); }
+.flower-inline { display: inline-block; width: .9em; height: .9em; vertical-align: -.08em; }
 .sway { transform-box: fill-box; transform-origin: center; animation: sway 7s ease-in-out infinite alternate; }
 .sway.b { animation-duration: 9s; animation-delay: -3s; }
 @keyframes sway { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
@@ -164,6 +177,13 @@ section { padding-block: 4.5rem; }
 .stack { margin-top: 3.2rem; }
 .stack h3 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.2rem; color: var(--accent-rose); }
 .techs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(7.6rem, 1fr)); gap: 1rem; }
+.tech-python { --brand: #3776AB; }
+.tech-javascript { --brand: #C9A500; }
+.tech-json { --brand: #5E9C58; }
+.tech-html { --brand: #E34F26; }
+.tech-css { --brand: #1572B6; }
+.tech-c { --brand: #3949AB; }
+.tech-mysql { --brand: #4479A1; }
 .tech {
   display: grid; justify-items: center; gap: .75rem; padding: 1.4rem .6rem 1.1rem; min-width: 0;
   border-radius: 28px 6px 28px 6px; background: var(--surface); border: 1px solid var(--line);
@@ -230,6 +250,7 @@ textarea { min-height: 9rem; resize: vertical; }
 input:focus, textarea:focus { outline: none; border-color: var(--accent-violet); box-shadow: 0 0 0 4px var(--tint-violet); }
 form .btn { justify-self: start; }
 .status { min-height: 1.5rem; font-size: .95rem; color: var(--accent-rose); }
+.form-note { color: var(--ink-soft); font-size: .85rem; }
 @media (max-width: 820px) { .contact { grid-template-columns: minmax(0, 1fr); } }
 
 /* Pied de page */
